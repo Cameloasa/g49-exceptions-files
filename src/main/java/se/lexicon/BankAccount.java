@@ -12,11 +12,23 @@ public class BankAccount {
 
 
     public void deposit(double amount) {
-        // todo: needs completion
+
+        if (amount > 0) {
+            balance += amount;
+            System.out.println(amount + " deposited successfully into account " + accountNumber);
+        } else {
+            System.out.println("Invalid deposit amount");
+        }
     }
 
     public void withdraw(double amount) {
-        // todo: needs completion
+
+        if (amount > 0 && balance >= amount) {
+            balance -= amount;
+            System.out.println(amount + " withdrawn successfully from account " + accountNumber);
+        } else {
+            System.out.println("Invalid withdrawal amount or insufficient funds");
+        }
     }
 
     public int getAccountNumber() {
